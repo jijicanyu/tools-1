@@ -1,0 +1,62 @@
+
+import random
+
+#num = lambda n, 
+def randnum(n, zeros=0):
+	return random.randint( pow(10,n-1)+1, pow(10, n) -1 ) * pow(10, zeros)
+
+def shizi(num1, num2, op, zeros1=0, zeros2=0):
+	op_dic = {1:'+', 2:'-', 3:'*', 4:'/'}
+	if op in op_dic:
+		op = op_dic[op]
+	return str(randnum(num1,zeros1)) + op + str(randnum(num2,zeros2))
+
+# def kousuanchengfa(n):
+# 	''' ( int ) -> list of string
+
+# 	自动生成形如 '59×8='  或 '3×81=' 的两位数乘以一位数的口算乘法习题。
+# 	n代表生成的个数，返回习题列表。
+
+# 	'''
+# 	l = [0, 1]
+#     result = []
+#     for i in range(n):
+#         choice = random.choice(l)
+#         if choice == 0:
+#             result.append( str(random.randint(11,99)) + '×' + str(random.randint(3,9)) )
+#         else:
+#             result.append( str(random.randint(11,99)) + '×' + str(random.randint(3,9)) )
+
+#     return result
+
+# def bisuanchengfa(n, kind = 0):
+# 	''' ( int, int ) -> list of string
+
+# 	自动生成笔算乘法习题。
+# 	n代表生成的个数，返回习题列表。
+	
+# 	kind表示生成的种类：　
+# 	0 ：混合类型
+# 	1 ：三位数乘两位数， 如 283 × 81 = 
+# 	2 ：两位数乘三位数， 如 71 × 826 =
+# 	3 ：末尾有0数的乘法， 如 820 × 821=
+
+# 	'''
+#     l = [1]
+#     result = []
+#     for i in range(n):
+#     	if kind == 0:
+#         	choice = random.choice(l)
+#         else:
+#         	choice = kind
+
+#         if choice == 1:
+#             result.append( str(random.randint(101,999)) + '×' + str(random.randint(11,99)) )
+#         else:
+#             result.append( str(random.randint(11,99)) + '×' + str(random.randint(101,999)) )
+
+#     return result
+
+            
+if __name__ == '__main__':
+    print shizi(2,3,1)
